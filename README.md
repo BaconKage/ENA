@@ -123,7 +123,7 @@ Person's message
 
 ## Run locally
 
-Requirements: Node.js 20 or newer and a Groq API key.
+Requirements: Node.js 22 or newer and a Groq API key.
 
 ```bash
 git clone https://github.com/BaconKage/ENA.git

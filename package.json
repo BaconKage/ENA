@@ -19,7 +19,7 @@
     "privacy-first"
   ],
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.0.0"
   },
   "scripts": {
     "dev": "next dev",
