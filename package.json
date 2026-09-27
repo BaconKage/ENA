@@ -1,7 +1,26 @@
 {
   "name": "ena-emotional-support",
   "version": "0.1.0",
+  "description": "A session-based emotional-support chatbot inspired by Entropic Neural Analysis.",
   "private": true,
+  "homepage": "https://ena-theta.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaconKage/ENA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BaconKage/ENA/issues"
+  },
+  "keywords": [
+    "emotional-support",
+    "entropic-neural-analysis",
+    "groq",
+    "nextjs",
+    "privacy-first"
+  ],
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

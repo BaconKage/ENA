@@ -1,0 +1,26 @@
+name: Feature request
+description: Suggest a focused improvement to ENA.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What user need would this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the smallest useful version of the improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Privacy and safety impact
+      description: Could this affect stored session information, third-party processing, vulnerable users, or ENA's non-clinical boundaries?
+    validations:
+      required: true

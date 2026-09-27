@@ -1,12 +1,34 @@
-# ENA — an entropy-aware emotional-support prototype
-
-<p align="center">
+<div align="center">
   <img src="public/ena-logo.png" width="128" alt="ENA logo: a warm continuous form representing a protected conversation and returning balance" />
-</p>
+
+# ENA
+
+### A calmer, session-based emotional-support chatbot inspired by Entropic Neural Analysis
+
+[![Live prototype](https://img.shields.io/badge/Live_prototype-Open_ENA-315f56?style=for-the-badge)](https://ena-theta.vercel.app)
+[![CI](https://img.shields.io/github/actions/workflow/status/BaconKage/ENA/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/BaconKage/ENA/actions/workflows/ci.yml)
+[![Next.js](https://img.shields.io/badge/Next.js-16-111111?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
+**[Open the live prototype](https://ena-theta.vercel.app)** · [Privacy notice](https://ena-theta.vercel.app/privacy) · [Prototype terms](https://ena-theta.vercel.app/terms)
+
+</div>
 
 ENA is a session-based emotional-reflection chatbot inspired by the paper's **Entropic Neural Analysis (ENA)** framework. It is designed to listen, help a person untangle a concern, or support one manageable next step while adapting the length and focus of its replies to the complexity of the conversation.
 
-This repository is an experimental research prototype. **ENA is not therapy, a medical device, a crisis service, or a substitute for qualified professional care.**
+> [!IMPORTANT]
+> This repository is an experimental research prototype. **ENA is not therapy, a medical device, a crisis service, or a substitute for qualified professional care.**
+
+## At a glance
+
+| | |
+| --- | --- |
+| **Live application** | [ena-theta.vercel.app](https://ena-theta.vercel.app) |
+| **Core idea** | Adapt response pacing as conversational information load rises or resolves. |
+| **Memory model** | Transparent, browser-tab-only session notes with user-controlled clearing. |
+| **AI provider** | GroqCloud, using schema-constrained responses validated with Zod. |
+| **Persistence** | No application database, user accounts, local storage, or intentional chat-history logging. |
+| **Status** | Research and demonstration prototype for adults aged 18 and over. |
 
 ## What the prototype does
 
@@ -59,7 +81,7 @@ C_t=0.40X_t+0.35N_t+0.25P_t
 $$
 
 $$
-S_{t+1}=\operatorname{clip}(0.82S_t+0.32C_t-0.26G_t,0,1)
+S_{t+1}=\mathrm{clip}\left(0.82S_t+0.32C_t-0.26G_t,\,0,\,1\right)
 $$
 
 where $X_t$ is semantic complexity, $N_t$ is novelty, $P_t$ is repetition, and $G_t$ is regulation. Values below $0.40$ use open pacing, values from $0.40$ use focused pacing, and values from $0.68$ use gentle pacing.
@@ -129,6 +151,10 @@ Do not commit `.env.local`. The repository's `.gitignore` excludes it and other 
 
 ## Deploy to Vercel
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FBaconKage%2FENA&env=GROQ_API_KEY&envDescription=A%20GroqCloud%20API%20key%20is%20required%20for%20chat%20responses.&envLink=https%3A%2F%2Fconsole.groq.com%2Fkeys)
+
+The reference deployment is available at **[ena-theta.vercel.app](https://ena-theta.vercel.app)**.
+
 1. Import `BaconKage/ENA` into Vercel.
 2. Keep the detected framework preset as **Next.js**.
 3. Add `GROQ_API_KEY` under **Project Settings → Environment Variables**.
@@ -162,6 +188,14 @@ npm run build
 ```
 
 The test suite covers the bounded ENA load update, pace transitions, signal clamping, and local urgent-language detection.
+
+Every push and pull request to `main` runs linting, tests, and a production build through GitHub Actions.
+
+## Contributing and security
+
+Contributions that improve clarity, accessibility, privacy, safety boundaries, or the fidelity of the ENA implementation are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+
+Please do not disclose credentials, personal conversation content, or security vulnerabilities in a public issue. Follow the private reporting process in [SECURITY.md](SECURITY.md).
 
 ## Project status
 
