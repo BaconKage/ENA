@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+# Next.js
+/.next
+/out
+
+# local configuration and secrets
+.env*
+!.env.example
+
+# test and editor output
+/coverage
+*.log
+.DS_Store
